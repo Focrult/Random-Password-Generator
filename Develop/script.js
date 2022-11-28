@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function generatePassword(){
+
   //list what is to be included in password
   //length - max 128 characters
   //numbers
@@ -19,7 +20,8 @@ function generatePassword(){
 //new var for the password that has been randomly generated
 
 //use either a for or while loop - check this
-
+var newpassword = "test";
+return newpassword;
 //return the result
 }
 
