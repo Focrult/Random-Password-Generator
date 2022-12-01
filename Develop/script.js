@@ -7,9 +7,9 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function generatePassword(){
-  const characters1 = "abcdefghijklmnopqrstuvwxyz";
-  const characters2 = "!@#$%^&*()";
-  const characters3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const characters1 = 'abcdefghijklmnopqrstuvwxyz';
+  const characters2 = '!@#$%^&*()';
+  const characters3 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   var length = prompt("What is your length?");
   if(length > 128){
@@ -23,30 +23,35 @@ function generatePassword(){
   var specialCharacters = confirm("Do you want special characters in your randomised password?");
 
   //function inside a function 
-  var RandomGenerator = { //single expression function - to return whats to the right of the equals sign
+  var RandomGenerator = { //single expression function - to return whats to the right of the equals sign 
     randomNum: function(){ //randomise numbers ---- method function(){}
       return Math.floor(Math.random() * 10); //0-9 random numbers
     },
     randomlowerCase: function(){  //randomise lowercase
-     return characters1[Math.floor(Math.random() * characters1.length)];
+     return characters1.charAt(Math.floor(Math.random() * characters1.length));
     },
-    randomUppercase: function(){    //randomise uppercase - added : to remove error
-      return characters3[Math.floor(Math.random() * characters3.length)];
-    }, //added comma to remove error
-    randomSpecial: function (){   //randomise specialCharacters
-      return characters2[Math.floor(Math.random() * characters2.length)]; 
+    randomSpecial: function(){    //randomise uppercase - added : to remove error
+      return characters2.charAt(Math.floor(Math.random() * characters2.length));
+    }, 
+    randomUppercase: function (){   //randomise specialCharacters
+      return characters3.charAt(Math.floor(Math.random() * characters3.length)); 
     },
   };
-//minimum characters for all variables
+//minimum character
   var MinCount = 0;
-  var minNum = ""; //empty
-  var minLow = "";
-  var minUpper = "";
-  var minSChar = "";
+  var minNum = ''; //empty
+  var minLow = '';
+  var minUpper = '';
+  var minSChar = '';
   //if else statements
+
+var newpassword = '';
+//new var for the password that is to be randomly generated
+
+for(var i = 0; i < (length - MinCount); i++){ //for loop - to generate those random numbers
   if(numbers === true){ //strict equality --> === 
     minNum = RandomGenerator.randomNum();
-    MinCount++; //increment 1
+    MinCount++;
   }if(lowercase === true){
     minLow = RandomGenerator.randomlowerCase();
     MinCount++;
@@ -57,22 +62,8 @@ function generatePassword(){
     minSChar = RandomGenerator.randomSpecial();
     MinCount++;
   }
-
-var newpassword = "";
-//new var for the password that is to be randomly generated
-
-for(var i = 0; i < length; i++){ //for loop to generate those random numbers
-var random = Math.floor(Math.random() * length);
-
-  newpassword += random;
+var newpasswordarray = newpassword + minNum + minLow + minUpper + minSChar;
 } 
-//ensure characters are added
-newpassword += minSChar;
-newpassword += minLow;
-newpassword += minNum;
-newpassword += minUpper;
-
-//returns new password
 return newpassword;
 }
 
