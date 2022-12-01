@@ -3,11 +3,12 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function generatePassword(){
+  //declaring characters
   const characters1 = 'abcdefghijklmnopqrstuvwxyz';
   const characters2 = '!@#$%^&*()';
   const characters3 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  var length = prompt("What is your length?");
+  var length = prompt("What is your length?"); //if else to check size of length!
   if(length < 8){
     alert("Length must be greater than 8!");
     return;
@@ -43,12 +44,13 @@ function generatePassword(){
   var minLow = '';
   var minUpper = '';
   var minSChar = '';
-  //if else statements
+  
 
 var newpassword = '';
 //new var for the password that is to be randomly generated
 
 for(var i = 0; i < length; i++){ //for loop - to generate those random numbers
+  //if else statements
   if(numbers === true){ //strict equality --> === 
     minNum = RandomGenerator.randomNum();
     MinCount++;
@@ -62,19 +64,15 @@ for(var i = 0; i < length; i++){ //for loop - to generate those random numbers
     minSChar = RandomGenerator.randomSpecial();
     MinCount++;
   }
-newpassword = newpassword + minNum + minLow + minUpper + minSChar; //potential cause for repeat
+ newpassword = newpassword + minNum + minLow + minUpper + minSChar; //Cause for bug here!
 }
-
 return newpassword;
 }
-
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password; 
-
 }
-
 // Add event listener to generate button - refer to class notes
 generateBtn.addEventListener("click", writePassword);
