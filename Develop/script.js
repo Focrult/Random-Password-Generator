@@ -19,26 +19,27 @@ function generatePassword(){
 
   //function inside a function 
   var testGeneraterandom = { //single expression function - to return whats to the right of the equals sign
-    function randomNum(){ //randomise numbers
- 
-    }
-    function randomlowerCase(){  //randomise lowercase
-
-    }
-    function randomUppercase(){    //randomise uppercase
-
-    }
-    function randomSpecial(){    //randomise specialCharacters
-    }
-   
-  
-  }
+    randomNum: function(){ //randomise numbers ---- method function(){}
+      return Math.floor(Math.random() * 10) //0-9 random numbers
+    },
+    randomlowerCase: function(){  //randomise lowercase
+     return Math.random().toString(36); //base 36
+    },
+    randomUppercase: function(){    //randomise uppercase - added : to remove error
+      return toUpperCase(Math.random().toString(36)); //base 36
+    }, //added comma to remove error
+    /*
+    function randomSpecial():{   //randomise specialCharacters
+      Math.floor(Math.random() * 10) 
+    },
+   */
+  };
 
 
 
 
   //if else statements
-  if(numers === true){
+  if(numbers === true){ //strict equality --> === true
 
 
   }if(lowercase === true){
@@ -56,24 +57,17 @@ function generatePassword(){
   }
 
 
-
-  //list what is to be included in password
-  //length - max 128 characters
-  //numbers
-  //lowercase letters
-  //uppercase letters
-  //special characters
-
-
   //minimum for each? Check! what will happen if minimum ignored? is it necessary.
-
-  //array function for each event - use math random or crypto?
-
 
 //new var for the password that has been randomly generated
 
+for(var i = 0; i < length;i++){
+  var randomNumber = testGeneraterandom.randomNum();
+  var randomLowerCase = testGeneraterandom.randomlowerCase();
+  var randomUppercase = testGeneraterandom.randomUppercase();
+  var randomSpecial = testGeneraterandom.randomSpecial();
+}
 
-//use either a for or while loop - check this
 var newpassword = "";
 return newpassword;
 //return the result
