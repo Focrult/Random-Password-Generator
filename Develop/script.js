@@ -1,8 +1,16 @@
+//ids password, generate 
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function generatePassword(){
+  //declare global 
+
+
+
 
   //list what is to be included in password
   //length - max 128 characters
@@ -20,7 +28,7 @@ function generatePassword(){
 //new var for the password that has been randomly generated
 
 //use either a for or while loop - check this
-var newpassword = "test";
+var newpassword = "";
 return newpassword;
 //return the result
 }
