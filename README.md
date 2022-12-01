@@ -18,7 +18,8 @@ This can be used by anyone who wants to take advantage of a password generator. 
 
 
 # Screeshots + Link
-Link to deployed application
+Link to deployed application: https://focrult.github.io/Random-Password-Generator/
+
 ![greaterthan128](https://user-images.githubusercontent.com/114898970/205080970-96b6e31f-5c5f-4e9e-8ef1-4cb221a789fb.png)
 ![lessthan8](https://user-images.githubusercontent.com/114898970/205080984-bdff7f5e-69d7-41ca-8275-786a3b0d75f0.png)
 ![prompt1](https://user-images.githubusercontent.com/114898970/205080988-566ebe8a-fb4f-4630-84d3-b25c9c6fac3b.png)
