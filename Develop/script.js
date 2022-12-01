@@ -10,6 +10,7 @@ function generatePassword(){
   //declare global 
   var length = prompt("What is your length?");
   //prompt is declared, try windowconfirm()?
+  //confirm() method returns true if user clicks ok, otherwise it is false!
   var numbers = confirm("do you want numbers in your randomised password?");
   var lowercase = confirm("do you want lowercase letters in your randomised password?");
   var uppercase = confirm("do you want uppercase letters in your randomised password?");
