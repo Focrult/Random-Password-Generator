@@ -5,6 +5,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 // Write password to the #password input
 function generatePassword(){
   //declare global 
@@ -17,6 +18,24 @@ function generatePassword(){
   var specialChars = confirm("do you want special characters in your randomised password?");
 
 
+  //if else statements
+  if(numers === true){
+
+    
+  }if(lowercase === true){
+
+
+  }if(uppercase === true){
+
+    
+  }if(lowercase === true){
+
+
+  }if(specialChars === true){
+
+
+  }
+
 
   //list what is to be included in password
   //length - max 128 characters
@@ -24,6 +43,7 @@ function generatePassword(){
   //lowercase letters
   //uppercase letters
   //special characters
+
 
   //minimum for each? Check!
 
@@ -38,6 +58,9 @@ var newpassword = "";
 return newpassword;
 //return the result
 }
+
+
+
 
 
 function writePassword() {
