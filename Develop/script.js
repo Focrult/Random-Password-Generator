@@ -10,6 +10,10 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword(){
   //declare global for function
   var length = prompt("What is your length?");
+  if(length > 128){
+    alert("Length must be less than 128");
+    return;
+  }
   //prompt is declared, try windowconfirm()?
   //confirm() method returns true if user clicks ok, otherwise it is false!
   var numbers = confirm("do you want numbers in your randomised password?");
@@ -36,39 +40,31 @@ function generatePassword(){
   };
 
 
-
-
   //if else statements
   if(numbers === true){ //strict equality --> === true
-
+    testGeneraterandom.randomNumber();
 
   }if(lowercase === true){
-
+    testGeneraterandom.randomlowerCase();
 
   }if(uppercase === true){
-
+    testGeneraterandom.randomUppercase();
     
-  }if(lowercase === true){
-
-
-  }if(specialChars === true){
-
-
+  }if(specialCharacters === true){
+    testGeneraterandom.randomrandomSpecial();
   }
 
 
   //minimum for each? Check! what will happen if minimum ignored? is it necessary.
 
 //new var for the password that has been randomly generated
+var newpassword = "";
+for(var i = 0; i < length; i++){
+  var random = 
 
-for(var i = 0; i < length;i++){
-  var randomNumber = testGeneraterandom.randomNum();
-  var randomLowerCase = testGeneraterandom.randomlowerCase();
-  var randomUppercase = testGeneraterandom.randomUppercase();
-  var randomSpecial = testGeneraterandom.randomSpecial();
+newpassword += random;
 }
 
-var newpassword = "";
 return newpassword;
 //return the result
 }
