@@ -5,73 +5,76 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
 // Write password to the #password input
 function generatePassword(){
-  //declare global for function
+  const characters1 = "abcdefghijklmnopqrstuvwxyz";
+  const characters2 = "!@#$%^&*()";
+  const characters3 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
   var length = prompt("What is your length?");
   if(length > 128){
     alert("Length must be less than 128");
     return;
   }
-  //prompt is declared, try windowconfirm()?
   //confirm() method returns true if user clicks ok, otherwise it is false!
-  var numbers = confirm("do you want numbers in your randomised password?");
-  var lowercase = confirm("do you want lowercase letters in your randomised password?");
-  var uppercase = confirm("do you want uppercase letters in your randomised password?");
-  var specialCharacters = confirm("do you want special characters in your randomised password?");
+  var numbers = confirm("Do you want numbers in your randomised password?");
+  var lowercase = confirm("Do you want lowercase letters in your randomised password?");
+  var uppercase = confirm("Do you want uppercase letters in your randomised password?");
+  var specialCharacters = confirm("Do you want special characters in your randomised password?");
 
   //function inside a function 
-  var testGeneraterandom = { //single expression function - to return whats to the right of the equals sign
+  var RandomGenerator = { //single expression function - to return whats to the right of the equals sign
     randomNum: function(){ //randomise numbers ---- method function(){}
-      return Math.floor(Math.random() * 10) //0-9 random numbers
+      return Math.floor(Math.random() * 10); //0-9 random numbers
     },
     randomlowerCase: function(){  //randomise lowercase
-     return Math.random().toString(36); //base 36
+     return characters1[Math.floor(Math.random() * characters1.length)];
     },
     randomUppercase: function(){    //randomise uppercase - added : to remove error
-      return toUpperCase(Math.random().toString(36)); //base 36
+      return characters3[Math.floor(Math.random() * characters3.length)];
     }, //added comma to remove error
-    /*
-    function randomSpecial():{   //randomise specialCharacters
-      Math.floor(Math.random() * 10) 
+    randomSpecial: function (){   //randomise specialCharacters
+      return characters2[Math.floor(Math.random() * characters2.length)]; 
     },
-   */
   };
-
-
+//minimum characters for all variables
+  var MinCount = 0;
+  var minNum = ""; //empty
+  var minLow = "";
+  var minUpper = "";
+  var minSChar = "";
   //if else statements
-  if(numbers === true){ //strict equality --> === true
-    testGeneraterandom.randomNumber();
-
+  if(numbers === true){ //strict equality --> === 
+    minNum = RandomGenerator.randomNum();
+    MinCount++; //increment 1
   }if(lowercase === true){
-    testGeneraterandom.randomlowerCase();
-
+    minLow = RandomGenerator.randomlowerCase();
+    MinCount++;
   }if(uppercase === true){
-    testGeneraterandom.randomUppercase();
-    
+    minUpper = RandomGenerator.randomUppercase();
+    MinCount++;
   }if(specialCharacters === true){
-    testGeneraterandom.randomrandomSpecial();
+    minSChar = RandomGenerator.randomSpecial();
+    MinCount++;
   }
 
-
-  //minimum for each? Check! what will happen if minimum ignored? is it necessary.
-
-//new var for the password that has been randomly generated
 var newpassword = "";
-for(var i = 0; i < length; i++){
-  var random = 
+//new var for the password that is to be randomly generated
 
-newpassword += random;
-}
+for(var i = 0; i < length; i++){ //for loop to generate those random numbers
+var random = Math.floor(Math.random() * length);
 
+  newpassword += random;
+} 
+//ensure characters are added
+newpassword += minSChar;
+newpassword += minLow;
+newpassword += minNum;
+newpassword += minUpper;
+
+//returns new password
 return newpassword;
-//return the result
 }
-
-
-
-
 
 function writePassword() {
   var password = generatePassword();
