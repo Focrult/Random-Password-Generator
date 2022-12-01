@@ -1,7 +1,3 @@
-//ids password, generate 
-
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -12,8 +8,12 @@ function generatePassword(){
   const characters3 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   var length = prompt("What is your length?");
+  if(length < 8){
+    alert("Length must be greater than 8!");
+    return;
+  }
   if(length > 128){
-    alert("Length must be less than 128");
+    alert("Length must be less than 128!");
     return;
   }
   //confirm() method returns true if user clicks ok, otherwise it is false!
@@ -48,7 +48,7 @@ function generatePassword(){
 var newpassword = '';
 //new var for the password that is to be randomly generated
 
-for(var i = 0; i < (length - MinCount); i++){ //for loop - to generate those random numbers
+for(var i = 0; i < length; i++){ //for loop - to generate those random numbers
   if(numbers === true){ //strict equality --> === 
     minNum = RandomGenerator.randomNum();
     MinCount++;
@@ -62,8 +62,9 @@ for(var i = 0; i < (length - MinCount); i++){ //for loop - to generate those ran
     minSChar = RandomGenerator.randomSpecial();
     MinCount++;
   }
-var newpasswordarray = newpassword + minNum + minLow + minUpper + minSChar;
-} 
+newpassword = newpassword + minNum + minLow + minUpper + minSChar;
+}
+
 return newpassword;
 }
 
