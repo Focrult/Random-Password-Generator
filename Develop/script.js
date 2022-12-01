@@ -8,7 +8,12 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function generatePassword(){
   //declare global 
-
+  var length = prompt("What is your length?");
+  //prompt is declared, try windowconfirm()?
+  var numbers = confirm("do you want numbers in your randomised password?");
+  var lowercase = confirm("do you want lowercase letters in your randomised password?");
+  var uppercase = confirm("do you want uppercase letters in your randomised password?");
+  var specialChars = confirm("do you want special characters in your randomised password?");
 
 
 
@@ -38,9 +43,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = password; 
 
 }
 
-// Add event listener to generate button
+// Add event listener to generate button - refer to class notes
 generateBtn.addEventListener("click", writePassword);
