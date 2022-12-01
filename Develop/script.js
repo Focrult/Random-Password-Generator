@@ -8,20 +8,31 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function generatePassword(){
-  //declare global 
+  //declare global for function
   var length = prompt("What is your length?");
   //prompt is declared, try windowconfirm()?
   //confirm() method returns true if user clicks ok, otherwise it is false!
   var numbers = confirm("do you want numbers in your randomised password?");
   var lowercase = confirm("do you want lowercase letters in your randomised password?");
   var uppercase = confirm("do you want uppercase letters in your randomised password?");
-  var specialChars = confirm("do you want special characters in your randomised password?");
+  var specialCharacters = confirm("do you want special characters in your randomised password?");
+
+  //function inside a function
+  var functionGeneraterandom = {
+    //randomise numbers
+
+    //randomise lowercase
+    //randomise uppercase
+    //randomise specialCharacters
+  }
+
+
 
 
   //if else statements
   if(numers === true){
 
-    
+
   }if(lowercase === true){
 
 
