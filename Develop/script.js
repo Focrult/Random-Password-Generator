@@ -62,7 +62,7 @@ for(var i = 0; i < length; i++){ //for loop - to generate those random numbers
     minSChar = RandomGenerator.randomSpecial();
     MinCount++;
   }
-newpassword = newpassword + minNum + minLow + minUpper + minSChar;
+newpassword = newpassword + minNum + minLow + minUpper + minSChar; //potential cause for repeat
 }
 
 return newpassword;
